@@ -11,6 +11,10 @@ func main() {
 	index := largestElement(arr)
 
 	fmt.Println("Largest element in the given array is:", arr[index], "present at index:", index)
+
+	index = smallestElement(arr)
+
+	fmt.Println("Smallest element in the given array is:", arr[index], "present at index:", index)
 }
 
 func largestElement(arr []int) int {
@@ -24,4 +28,18 @@ func largestElement(arr []int) int {
 	}
 
 	return maxi
+}
+
+func smallestElement(arr []int) int {
+	mini := -1
+	minElement := math.MaxInt
+
+	for i, v := range arr {
+		if v < minElement {
+			mini = i
+			minElement = v
+		}
+	}
+
+	return mini
 }
